@@ -8,7 +8,7 @@ def create_dataset(name:str="lmarena-ai/arena-human-preference-55k") -> DatasetD
     ds['train'] = Dataset.from_pandas(df)
     #Create Test, Validation & Training set
     ds_test = ds['train'].train_test_split(0.1)
-    ds_eval = ds_test['test'].train_test_split(0.5)
+    ds_eval = ds_test['test'].train_test_split(0.95)
     #Create to proper dictionnary
     ds = DatasetDict({
         'train': ds_test['train'],

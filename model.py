@@ -28,7 +28,7 @@ def build_model(model_id:str="mistralai/Mistral-7B-Instruct-v0.1"):
         quantization_config=bnb_config,
         device_map='cuda:0',
         torch_dtype=torch.bfloat16,
-        attn_implementation="flash_attention_2"
+        # attn_implementation="flash_attention_2"
     )   
     model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
 
