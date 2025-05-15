@@ -1,0 +1,12 @@
+torch
+transformers
+peft
+trl
+accelerate
+bitsandbytes
+protobuf
+sentencepiece
+langchain
+langchain-huggingface
+langchain-community
+langchain-openai
