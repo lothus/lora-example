@@ -53,6 +53,10 @@ def eval():
     df = pd.DataFrame.from_dict(eval_set)
     df.to_csv('eval.csv', index=False)
 
+def display_results():
+    df = pd.read_csv('eval.csv')
+    print(df['value'].value_counts())
+
 def display_menu(menu):
     for k, function in menu.items():
         print(k,function.__name__)
@@ -67,6 +71,7 @@ def main():
         train,
         inference,
         eval,
+        display_results,
         quit
     ]
     menu_items = dict(enumerate(function_names,start=1))
